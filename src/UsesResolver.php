@@ -25,9 +25,15 @@ class UsesResolver
      */
     public function loadFromClass(string $classFQN): array
     {
+        $ref = (new \ReflectionClass($classFQN));
+
+        if (false === $ref->getFileName()) {
+            return [];
+        }
+
         return $this->loadFromFile(
             $classFQN,
-            (new \ReflectionClass($classFQN))->getFileName()
+            $ref->getFileName()
         );
     }
 
