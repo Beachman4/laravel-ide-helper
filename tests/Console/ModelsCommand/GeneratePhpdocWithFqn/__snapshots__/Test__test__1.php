@@ -90,12 +90,12 @@ use Illuminate\Support\Carbon;
  * @property string $macaddress_not_nullable
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- * @property-read Collection|Post[] $posts
+ * @property-read Collection<int, Post> $posts
  * @property-read int|null $posts_count
  * @method static EloquentBuilder|Post newModelQuery()
  * @method static EloquentBuilder|Post newQuery()
  * @method static EloquentBuilder|Post null(string $unusedParam)
- * @method static QueryBuilder|Post onlyTrashed()
+ * @method static EloquentBuilder|Post onlyTrashed()
  * @method static EloquentBuilder|Post query()
  * @method static EloquentBuilder|Post whereBigIntegerNotNullable($value)
  * @method static EloquentBuilder|Post whereBigIntegerNullable($value)
@@ -170,8 +170,8 @@ use Illuminate\Support\Carbon;
  * @method static EloquentBuilder|Post whereUuidNullable($value)
  * @method static EloquentBuilder|Post whereYearNotNullable($value)
  * @method static EloquentBuilder|Post whereYearNullable($value)
- * @method static QueryBuilder|Post withTrashed()
- * @method static QueryBuilder|Post withoutTrashed()
+ * @method static EloquentBuilder|Post withTrashed()
+ * @method static EloquentBuilder|Post withoutTrashed()
  * @mixin Eloquent
  */
 class Post extends Model
